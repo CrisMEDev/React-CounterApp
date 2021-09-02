@@ -7,7 +7,7 @@ import PrimeraApp2 from './PrimeraApp';
 // Referencias en el html
 const divRoot = document.querySelector('#root');
 
-ReactDOM.render( <PrimeraApp2 saludo='Hola  soy Cristian ME' />, divRoot );
+ReactDOM.render( <PrimeraApp2 saludo='Hola, soy Cristian ME' numero={123} />, divRoot );
 
 
 

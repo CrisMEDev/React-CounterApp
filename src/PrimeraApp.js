@@ -2,6 +2,7 @@
 
 // import React, { Fragment } from 'react';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 /**
@@ -24,27 +25,28 @@ import React from 'react';
 
 // Se pueden extraer las variables del objeto props desde el argumento con desestructuracion
 // ( { saludo } )  es lo más común
-const PrimeraApp2 = ( props ) => {
-
-    const saludo = 'Hola mundo, const';
+const PrimeraApp2 = ( {saludo, numero} ) => {
 
     const objeto = {            // Los arrays se concatenan pero los objetos no se pueden renderizar a menos que se use
         nombre: 'Cristian',     // Los mostrado debajo
         edad: 26
     };
 
-    console.log(props);
-
     return (
         <>
             <h1>{ saludo }</h1>
+            <h2>{ numero }</h2>
             <pre>{ JSON.stringify(objeto, null, 3) }</pre>
             <p>Mi primera aplicación en React</p>
 
-            <h2>{ props.saludo }</h2>
         </>
     );
 
+}
+
+PrimeraApp2.propTypes = {
+    saludo: PropTypes.string.isRequired,
+    numero: PropTypes.number.isRequired
 }
 
 export default PrimeraApp2;
