@@ -5,12 +5,20 @@ import PropTypes from 'prop-types';
 const CounterApp = ({ value }) => {
 
     // const state = useState(0);
-    const [ counter, setCounter ] = useState( 0 );
+    const [ counter, setCounter ] = useState( value );
 
     // handleAdd
-    const handleAdd = () => {
+    const handleAdd = ( event ) => {
         // setCounter( counter + 1 );
         setCounter( (c) => c + 1 );
+    }
+
+    const handleReset = ( event ) => {
+        setCounter( (c) => c = value );
+    }
+
+    const handleSubstract = ( event ) => {
+        setCounter( counter - 1 );
     }
 
     return (
@@ -19,6 +27,8 @@ const CounterApp = ({ value }) => {
             <h2>{ counter }</h2>
 
             <button onClick={ handleAdd }>+1</button>
+            <button onClick={ handleReset }>Reset</button>
+            <button onClick={ handleSubstract }>-1</button>
         </>
     );
 
