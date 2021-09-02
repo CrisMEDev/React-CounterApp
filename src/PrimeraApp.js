@@ -21,7 +21,10 @@ import React from 'react';
 
 // }
 
-const PrimeraApp2 = () => {
+
+// Se pueden extraer las variables del objeto props desde el argumento con desestructuracion
+// ( { saludo } )  es lo más común
+const PrimeraApp2 = ( props ) => {
 
     const saludo = 'Hola mundo, const';
 
@@ -30,11 +33,15 @@ const PrimeraApp2 = () => {
         edad: 26
     };
 
+    console.log(props);
+
     return (
         <>
             <h1>{ saludo }</h1>
             <pre>{ JSON.stringify(objeto, null, 3) }</pre>
             <p>Mi primera aplicación en React</p>
+
+            <h2>{ props.saludo }</h2>
         </>
     );
 
