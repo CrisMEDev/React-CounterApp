@@ -23,9 +23,17 @@ import React from 'react';
 
 const PrimeraApp2 = () => {
 
+    const saludo = 'Hola mundo, const';
+
+    const objeto = {            // Los arrays se concatenan pero los objetos no se pueden renderizar a menos que se use
+        nombre: 'Cristian',     // Los mostrado debajo
+        edad: 26
+    };
+
     return (
         <>
-            <h1>Hola mundo</h1>
+            <h1>{ saludo }</h1>
+            <pre>{ JSON.stringify(objeto, null, 3) }</pre>
             <p>Mi primera aplicación en React</p>
         </>
     );
