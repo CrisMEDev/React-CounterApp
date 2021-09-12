@@ -29,6 +29,27 @@ describe('Pruebas en <PrimeraApp />', () => {
         
     })
     
+    test('Debe de mostrar el subtitulo enviado por props', () => {
+
+        const numero = 0;
+        const saludo = 'Hola, Soy Cristian ME';
+        const subtitulo = 'Este es un subtitulo cool';
+        const wrapper = shallow(
+            <PrimeraApp2
+                saludo={saludo}
+                numero={numero}
+                subtitulo={subtitulo}
+            />
+        );
+
+        // Buscar el parrafor con el subtitulo dentro del wrapper que contiene el componente renderizado
+        const textoParrafo = wrapper.find('p').text();
+        
+        expect( textoParrafo ).toBe( subtitulo );
+
+        
+    })
+    
 
 });
 
