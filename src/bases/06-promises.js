@@ -8,10 +8,10 @@ export const getHeroeByIdAsync = async( id ) => {
             try {
                 const heroe = getHeroeById( id );
                 
-                heroe ? resolve(heroe) : reject('No se pudo encontrar el heroe');
+                heroe ? resolve(heroe) : reject('No se pudo encontrar al heroe');
                 
             } catch (error) {
-                reject('No se pudo encontrar el heroe');
+                reject('No se pudo encontrar al heroe');
             }
 
 

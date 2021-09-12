@@ -1,5 +1,5 @@
 
-const getImagen = async() => {
+export const getImagen = async() => {
     
     
     try {
@@ -10,12 +10,11 @@ const getImagen = async() => {
     
         const url = data.images.original.url;
     
-        const img = document.createElement('img');
-        img.src = url;
-        document.body.append( img );
+        return url;
         
     } catch (error) {
-        // Manejo del error
+        console.log(error);
+        return 'No existe';
     }
 
 }
