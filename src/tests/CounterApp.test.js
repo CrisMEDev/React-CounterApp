@@ -57,6 +57,24 @@ describe('Pruebas en el componente CounterApp', () => {
         expect( counterText ).toBe('99');
         
     });
+
+    test('Debe de colocar el valor por defecto con el boton reset', () => {
+
+        const wrapper = shallow(
+            <CounterApp
+                value={110}
+            />
+        );
+
+        // Se suma 1 para poder resetear y hacer la prueba
+        wrapper.find('button').at(0).simulate('click');
+        // Se resetea
+        wrapper.find('button').at(1).simulate('click');
+        const counterText = wrapper.find('h2').text().trim();
+
+        expect( counterText ).toBe('110');
+        
+    });
     
 
 });
