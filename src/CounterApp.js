@@ -39,7 +39,7 @@ CounterApp.propTypes = {
 }
 
 CounterApp.defaultProps = {
-    value: 0
+    value: 100
 }
 
 
