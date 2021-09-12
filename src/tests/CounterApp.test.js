@@ -3,6 +3,14 @@ import { shallow } from 'enzyme';
 import CounterApp from '../CounterApp';
 
 describe('Pruebas en el componente CounterApp', () => {
+
+    let wrapper = shallow( <CounterApp /> );;
+    
+    // Funcion que se ejecuta antes de cada una de las evaluaciones
+    beforeEach( () => {
+        // Para renderizar el componente antes de cada prueba
+        wrapper = shallow( <CounterApp /> );
+    });
     
     test('Debe mostrar <CounterApp /> correctamente', () => {
 
@@ -32,6 +40,23 @@ describe('Pruebas en el componente CounterApp', () => {
         
     });
     
+    test('Debe de incrementar botón +1', () => {
+
+        wrapper.find('button').at(0).simulate('click');
+        const counterText = wrapper.find('h2').text().trim();
+
+        expect( counterText ).toBe('101');
+        
+    });
+
+    test('Debe de decrementar botón -1', () => {
+        
+        wrapper.find('button').at(2).simulate('click');
+        const counterText = wrapper.find('h2').text().trim();
+
+        expect( counterText ).toBe('99');
+        
+    });
     
 
 });
